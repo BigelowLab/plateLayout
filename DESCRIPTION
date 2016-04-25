@@ -1,0 +1,17 @@
+Package: plateLayout
+Type: Package
+Title: Tools for working with plate (tray) layout definitions.
+Version: 1.0
+Date: 2013-06-07
+Authors@R: c( person("Ben", "Tupper", role = c("aut", "cre"), email =
+    "btupper@bigelow.org"), person("Ramunas", "Stepanaukas", role = "aut",
+    email = "rstepanaukas@bigelow.org"))
+Author: Ben Tupper and Ramunas Stepauskas, Single Cell Genomics Center, Bigelow
+    Laboratory for Ocean Science
+Maintainer: Ben Tupper <btupper@bigelow.org>
+Description: Plate layout defintions are used to identify well types and
+    locations on 384 or 96 well plates. This package provides convenience
+    functionality for reading writing and querying layout definitions.
+Depends:
+    methods
+License: GPL (>= 2)
