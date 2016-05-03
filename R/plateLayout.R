@@ -276,5 +276,6 @@ check.wellname <- function(well, reverse = FALSE){
 #' @param ... further arguments for \code{\link{check.wellname}}
 #' @return a character vector of well names
 check.wellnames <- function(well, ...){
-   check.wellname(well,...)}
+   check.wellname(well,...)
+}
 
