@@ -4,13 +4,16 @@
 \alias{tecan_A01}
 \title{Create a lookup table for translating tecan (1,2,3,...) to A01 (A01, B01, C01,...)}
 \usage{
-tecan_A01(nwell = 384)
+tecan_A01(nwell = 384, invert = FALSE)
 }
 \arguments{
 \item{nwell}{numeric the number of wells in the container}
+
+\item{invert}{logical if TRUE flip the names and values to yield
+a character vector c(1 = A01, 2 = B01, etc)}
 }
 \value{
-named character vector A01 = 1, B01 = 2, etc)
+named character vector c(A01 = 1, B01 = 2, etc)
 }
 \description{
 Create a lookup table for translating tecan (1,2,3,...) to A01 (A01, B01, C01,...)

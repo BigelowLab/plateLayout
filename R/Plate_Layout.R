@@ -222,7 +222,7 @@ Plate_LayoutRefClass$methods(
 #'
 #' @name Plate_Layout_to_tecan
 #' @family PLATE_LAYOUT
-#' @return a numeric vector of Tecan position invisibly
+#' @return a character vector of Tecan position invisibly
 NULL
 Plate_LayoutRefClass$methods(
    to_tecan = function(){
@@ -278,7 +278,13 @@ Create_Plate_Layout <- function(nwell = 384, ntype = 3){
 #'
 #' @export
 #' @param nwell numeric the number of wells in the container
-#' @return named character vector A01 = 1, B01 = 2, etc)
-tecan_A01 <- function(nwell = 384){
-   Create_Plate_Layout(nwell)$to_tecan()
+#' @param invert logical if TRUE flip the names and values to yield
+#'    a character vector c(1 = A01, 2 = B01, etc)
+#' @return named character vector c(A01 = 1, B01 = 2, etc)
+tecan_A01 <- function(nwell = 384, invert = FALSE){
+    x <- Create_Plate_Layout(nwell)$to_tecan()
+    if (invert){
+        x <- structure(names(x), .Names = as.character(unname(x)))
+    }
+    return(x)
 }

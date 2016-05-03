@@ -4,7 +4,7 @@
 \alias{Plate_Layout_to_tecan}
 \title{Translates A01, A02 names to Tecan position assignments}
 \value{
-a numeric vector of Tecan position invisibly
+a character vector of Tecan position invisibly
 }
 \description{
 Tecan assigns position number for each in the first column, then by each in 
