@@ -276,6 +276,7 @@ Create_Plate_Layout <- function(nwell = 384, ntype = 3){
 
 #' Create a lookup table for translating tecan (1,2,3,...) to A01 (A01, B01, C01,...)
 #'
+#' @export
 #' @param nwell numeric the number of wells in the container
 #' @return named character vector A01 = 1, B01 = 2, etc)
 tecan_A01 <- function(nwell = 384){
