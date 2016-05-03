@@ -229,7 +229,7 @@ Plate_LayoutRefClass$methods(
       n <- .self$count()
       if (n == 0) return(NULL)
       d <- .self$dim()
-      y <- as.vector(t(matrix(1:n, ncol = d[2], nrow = d[1], byrow = FALSE)))
+      y <- as.vector(t(matrix(as.character(1:n), ncol = d[2], nrow = d[1], byrow = FALSE)))
       names(y) <- names(.self$data)
       invisible(y)
    })
