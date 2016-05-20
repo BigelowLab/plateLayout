@@ -268,8 +268,12 @@ Plate_Layout <- function(x, asText = FALSE){
 #' @return an instance of Plate_Layout reference class
 Create_Plate_Layout <- function(nwell = 384, ntype = 3){
    X <- Plate_Layout()
-   x <- sample(LETTERS[seq_len(ntype)], nwell, replace = TRUE)
-   names(x) <- X$get_names(nwell)
+   if (nwell == 1){
+     x <- sample(LETTERS[seq_len(ntype)], nwell, replace = TRUE)
+     names(x) <- X$get_names(nwell)
+   } else {
+     x <- c('1' = "1:1")
+   }
    X$read_text(x)
    invisible(X)
 }
@@ -282,7 +286,11 @@ Create_Plate_Layout <- function(nwell = 384, ntype = 3){
 #'    a character vector c(1 = A01, 2 = B01, etc)
 #' @return named character vector c(A01 = 1, B01 = 2, etc)
 tecan_A01 <- function(nwell = 384, invert = FALSE){
-    x <- Create_Plate_Layout(nwell)$to_tecan()
+    if (nwell > 1){
+        x <- Create_Plate_Layout(nwell)$to_tecan()
+    } else {
+        x <- c("1:1" = "1")
+    }
     if (invert){
         x <- structure(names(x), .Names = as.character(unname(x)))
     }
