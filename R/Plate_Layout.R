@@ -268,7 +268,7 @@ Plate_Layout <- function(x, asText = FALSE){
 #' @return an instance of Plate_Layout reference class
 Create_Plate_Layout <- function(nwell = 384, ntype = 3){
    X <- Plate_Layout()
-   if (nwell == 1){
+   if (nwell != 1){
      x <- sample(LETTERS[seq_len(ntype)], nwell, replace = TRUE)
      names(x) <- X$get_names(nwell)
    } else {
